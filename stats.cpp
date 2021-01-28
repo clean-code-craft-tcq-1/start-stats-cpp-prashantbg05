@@ -15,18 +15,11 @@ CalMeanMaxMin Statistics::ComputeStatistics(const std::vector<float>& VecItem)
     VecData.MaxVal = 0;
     VecData.MinVal = 0;
     
-    if(!(VecItem.empty()))
-    {
+  
         VecData.Mean   = VecData.CalculateMean(VecItem);
         VecData.MaxVal = VecData.CalculateMax(VecItem);
         VecData.MinVal = VecData.CalculateMin(VecItem);
-    }
-    else
-    {
-        VecData.Mean = NAN;
-        VecData.MaxVal = NAN;
-        VecData.MinVal = NAN;
-    }
+  
   
     return VecData;
 } 
