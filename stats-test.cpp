@@ -6,6 +6,17 @@
 using namespace std;
 using namespace Statistics;
 
+struct computedStatsData
+{
+    float Average;
+    float Maximum;
+    float Minimum;
+    
+    string straverage;
+    string strmax;
+    string strmin;
+}computedStats;
+
 //Statistics obj;
 //float myarray[4] = {1.5, 8.9, 3.2, 4.5};
 TEST_CASE("reports average, minimum and maximum") {
