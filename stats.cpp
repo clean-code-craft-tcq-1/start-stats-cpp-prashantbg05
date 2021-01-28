@@ -6,111 +6,69 @@ using namespace std;
 using namespace Statistics;
 
     
-CalMeanMaxMin Statistics::ComputeStatistics(const std::vector<float>& VecItem)
+ComputeAVGMaxMin Statistics::ComputeStatistics(const std::vector<double>& report)
 {
     //Implement statistics here
     
-    CalMeanMaxMin VecData;
-    VecData.Mean = 0;
-    VecData.MaxVal = 0;
-    VecData.MinVal = 0;
+    ComputeAVGMaxMin statreport;
+    statreport.Average = 0;
+    statreport.Maximum = 0;
+    statreport.Minimum = 0;
     
-  
-        VecData.Mean   = VecData.CalculateMean(VecItem);
-        VecData.MaxVal = VecData.CalculateMax(VecItem);
-        VecData.MinVal = VecData.CalculateMin(VecItem);
-  
-  
-    return VecData;
-} 
-float CalMeanMaxMin::CalculateMean(const std::vector<float>& VecItem)
-{
-    float  sum = 0;
-    float  Mean = 0;
-   
-    for(int i=0;i<VecItem.size();i++)
+    if(!(report.empty()))
     {
-        sum = sum + VecItem[i];
-      
+        statreport.Average = statreport.CalculateAvg(report);
+        statreport.Maximum = statreport.CalculateMax(report);
+        statreport.Minimum = statreport.CalculateMin(report);
     }
-    Mean = sum/VecItem.size();
-
-    return Mean;
-}
-
-float CalMeanMaxMin::CalculateMax(const std::vector<float>& VecItem)
-{
- float  Max = VecItem[0];
-	float  Min = VecItem[0];
-   /*     for(int i=1;i<VecItem.size();i++)
-    {
-       if(Max < VecItem[i])
-       {
-          Max =  VecItem[i];
-       }
-    }
-	 */
-	
-	
-	 if (VecItem[0] > VecItem[1]) 
-    {
-        Max = VecItem[0];
-        Min = VecItem[1];
-    } 
     else
     {
-        Max = VecItem[1];
-        Min = VecItem[0];
-    } 
-     
-    for(i = 2; i < VecItem.size(); i++)
-    {
-        if (VecItem[i] > Max)     
-            Max = VecItem[i];
-             
-      /*   else if (VecItem[i] < Min)     
-            Min = VecItem[i]; */
+        statreport.Average = NAN;
+        statreport.Maximum = NAN;
+        statreport.Minimum = NAN;
     }
-	
-	
+  
+    return statreport;
+} 
+double ComputeAVGMaxMin::CalculateAvg(const std::vector<double>& report)
+{
+    double  sum = 0;
+    double  Avg = 0;
+   
+    for(int i=0;i<report.size();i++)
+    {
+        sum = sum + report[i];
+      
+    }
+    Avg = sum/report.size();
+
+    return Avg;
+}
+
+double ComputeAVGMaxMin::CalculateMax(const std::vector<double>& report)
+{
+    double  Max = report[0];
+    for(int i=1;i<report.size();i++)
+    {
+       if(Max < report[i])
+       {
+          Max =  report[i];
+       }
+    }
    
     return Max;
 }
 
-float CalMeanMaxMin::CalculateMin(const std::vector<float>& VecItem)
+double ComputeAVGMaxMin::CalculateMin(const std::vector<double>& report)
 {
-	 float  Max = VecItem[0];
-	float  Min = VecItem[0];
-/*      float  Min = VecItem[0];
-    for(int i=1;i<VecItem.size();i++)
+     double  Min = report[0];
+    for(int i=1;i<report.size();i++)
     {
-       if(Min > VecItem[i])
+       if(Min > report[i])
        {
-          Min =  VecItem[i];
+          Min =  report[i];
        }
     }
-    */
-	
-		 if (VecItem[0] > VecItem[1]) 
-    {
-        Max = VecItem[0];
-        Min = VecItem[1];
-    } 
-    else
-    {
-        Max = VecItem[1];
-        Min = VecItem[0];
-    } 
-     
-    for(i = 2; i < VecItem.size(); i++)
-    {
-        /* if (VecItem[i] > Max)     
-            Max = VecItem[i]; */
-             
-        else if (VecItem[i] < Min)     
-            Min = VecItem[i]; 
-    }
-	
-	
+   
     return Min;
 }
