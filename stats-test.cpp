@@ -2,7 +2,8 @@
 
 #include "catch.hpp"
 #include "stats.h"
-
+using namespace std;
+using namespace Statistics;
 
 
 #include <cmath>
