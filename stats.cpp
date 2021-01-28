@@ -19,6 +19,7 @@ Stats Statistics::ComputeStatistics(const std::vector<int>& )
    float mean ;
       
       mean =values[0]+values[1]+values[2]+values[3];
-      
+      computedStats.average=mean;
+     
       return (mean/4);
     }
