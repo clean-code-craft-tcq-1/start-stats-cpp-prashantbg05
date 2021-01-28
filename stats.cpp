@@ -40,9 +40,9 @@ float CalMeanMaxMin::CalculateMean(const std::vector<float>& VecItem)
 
 float CalMeanMaxMin::CalculateMax(const std::vector<float>& VecItem)
 {
-  /*   float  Max = VecItem[0];
+ float  Max = VecItem[0];
 	float  Min = VecItem[0];
-    for(int i=1;i<VecItem.size();i++)
+   /*     for(int i=1;i<VecItem.size();i++)
     {
        if(Max < VecItem[i])
        {
@@ -79,6 +79,8 @@ float CalMeanMaxMin::CalculateMax(const std::vector<float>& VecItem)
 
 float CalMeanMaxMin::CalculateMin(const std::vector<float>& VecItem)
 {
+	 float  Max = VecItem[0];
+	float  Min = VecItem[0];
 /*      float  Min = VecItem[0];
     for(int i=1;i<VecItem.size();i++)
     {
