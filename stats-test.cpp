@@ -2,17 +2,13 @@
 
 #include "catch.hpp"
 #include "stats.h"
-using namespace std;
-using namespace Statistics;
-
 
 #include <cmath>
-float arr[4]={1.5, 8.9, 3.2, 4.5};
+
 TEST_CASE("reports average, minimum and maximum") {
-  auto computedStats = Statistics::ComputeStatistics({1.5, 8.9, 3.2, 4.5});
-   // auto computedStats = Statistics::ComputeStatistics(arr);
+    auto computedStats = Statistics::ComputeStatistics({1.5, 8.9, 3.2, 4.5});
     float epsilon = 0.001;
-    REQUIRE(std::abs(computedStats.Mean - 4.525) < epsilon);
+    REQUIRE(std::abs(computedStats.average - 4.525) < epsilon);
     REQUIRE(std::abs(computedStats.max - 8.9) < epsilon);
     REQUIRE(std::abs(computedStats.min - 1.5) < epsilon);
 }
