@@ -6,81 +6,128 @@ using namespace std;
 using namespace Statistics;
 
     
-ComputeAVGMaxMin Statistics::ComputeStatistics(const std::vector<double>& report)
+CalMeanMaxMin Statistics::ComputeStatistics(const std::vector<float>& VecItem)
 {
     //Implement statistics here
     
-    ComputeAVGMaxMin statreport;
-    statreport.Average = 0;
-    statreport.Maximum = 0;
-    statreport.Minimum = 0;
+    CalMeanMaxMin VecData;
+    VecData.Mean = 0;
+    VecData.MaxVal = 0;
+    VecData.MinVal = 0;
     
-    if(!(report.empty()))
+    if(!(VecItem.empty()))
     {
-        statreport.Average = statreport.CalculateAvg(report);
-        statreport.Maximum = statreport.CalculateMax(report);
-        statreport.Minimum = statreport.CalculateMin(report);
+        VecData.Mean   = VecData.CalculateMean(VecItem);
+        VecData.MaxVal = VecData.CalculateMax(VecItem);
+        VecData.MinVal = VecData.CalculateMin(VecItem);
     }
     else
     {
-        statreport.Average = NAN;
-        statreport.Maximum = NAN;
-        statreport.Minimum = NAN;
+        VecData.Mean = NAN;
+        VecData.MaxVal = NAN;
+        VecData.MinVal = NAN;
     }
   
-    return statreport;
+    return VecData;
 } 
-double ComputeAVGMaxMin::CalculateAvg(const std::vector<double>& report)
+float CalMeanMaxMin::CalculateMean(const std::vector<float>& VecItem)
 {
-    double  sum = 0;
-    double  Avg = 0;
+    float  sum = 0;
+    float  Mean = 0;
    
-    for(int i=0;i<report.size();i++)
+    for(int i=0;i<VecItem.size();i++)
     {
-        sum = sum + report[i];
+        sum = sum + VecItem[i];
       
     }
-    Avg = sum/report.size();
+    Mean = sum/VecItem.size();
 
-    return Avg;
+    return Mean;
 }
 
-double ComputeAVGMaxMin::CalculateMax(const std::vector<double>& report)
+float CalMeanMaxMin::CalculateMax(const std::vector<float>& VecItem)
 {
-    double  Max = report[0];
-    for(int i=1;i<report.size();i++)
+  /*   float  Max = VecItem[0];
+	float  Min = VecItem[0];
+    for(int i=1;i<VecItem.size();i++)
     {
-       if(Max < report[i])
+       if(Max < VecItem[i])
        {
-          Max =  report[i];
+          Max =  VecItem[i];
        }
     }
+	 */
+	
+	
+	 if (VecItem[0] > VecItem[1]) 
+    {
+        Max = VecItem[0];
+        Min = VecItem[1];
+    } 
+    else
+    {
+        Max = VecItem[1];
+        Min = VecItem[0];
+    } 
+     
+    for(i = 2; i < VecItem.size(); i++)
+    {
+        if (VecItem[i] > Max)     
+            Max = VecItem[i];
+             
+      /*   else if (VecItem[i] < Min)     
+            Min = VecItem[i]; */
+    }
+	
+	
    
     return Max;
 }
 
-double ComputeAVGMaxMin::CalculateMin(const std::vector<double>& report)
+float CalMeanMaxMin::CalculateMin(const std::vector<float>& VecItem)
 {
-     double  Min = report[0];
-    for(int i=1;i<report.size();i++)
+/*      float  Min = VecItem[0];
+    for(int i=1;i<VecItem.size();i++)
     {
-       if(Min > report[i])
+       if(Min > VecItem[i])
        {
-          Min =  report[i];
+          Min =  VecItem[i];
        }
     }
-   
+    */
+	
+		 if (VecItem[0] > VecItem[1]) 
+    {
+        Max = VecItem[0];
+        Min = VecItem[1];
+    } 
+    else
+    {
+        Max = VecItem[1];
+        Min = VecItem[0];
+    } 
+     
+    for(i = 2; i < VecItem.size(); i++)
+    {
+        /* if (VecItem[i] > Max)     
+            Max = VecItem[i]; */
+             
+        else if (VecItem[i] < Min)     
+            Min = VecItem[i]; 
+    }
+	
+	
     return Min;
 }
-void statsAlerter::checkAndAlert(const std::vector<double>& alertvalues)
+void statsAlerter::checkAndAlert(const std::vector<float>& alertvalues)
 {
-    ComputeAVGMaxMin statreport;
+    CalMeanMaxMin VecData;
    statsAlerter checkstatsAlerter;
     
     EmailAlert checkEmailAlert;
     LEDAlert checkLEDAlert;
-    double max = 0;
-    max = statreport.CalculateMax(alertvalues);
+    float max = 0;
+    max = VecData.CalculateMax(alertvalues);
     if(max > checkstatsAlerter.maxThreshold )
     {
         checkEmailAlert.emailSent = true;
