@@ -23,3 +23,14 @@ Stats Statistics::ComputeStatistics(const std::vector<int>& )
      
       return (mean/4);
     }
+
+namespace App {
+namespace Core {
+
+INSTANTIATE_TEST_CASE_P(
+   stats_Test__ComputeStatistics,
+   stats_Test__ComputeStatistics_WithValidParam,
+   ::testing::Values
+   (
+   
+       )
