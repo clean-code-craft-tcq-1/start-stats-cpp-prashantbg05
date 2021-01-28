@@ -16,3 +16,36 @@ class ComputeAVGMaxMin
 };
    ComputeAVGMaxMin ComputeStatistics(const std::vector<double>& report);
 }
+
+
+
+
+class IAlerter
+{
+};
+
+
+class EmailAlert : public IAlerter
+{
+    public:
+    bool emailSent;
+};
+
+class LEDAlert : public IAlerter
+{
+     public:
+      bool ledGlows;
+};
+
+
+class statsAlerter
+{
+    public:
+     EmailAlert emailAlert;
+    LEDAlert ledAlert;
+   float maxThreshold;
+    std::vector<IAlerter*> alerters = {&emailAlert, &ledAlert};
+    //statsAlerter(maxThreshold, alerters);
+    statsAlerter(const float maxThreshold, std::vector<IAlerter*> alerters );
+    void checkAndAlert(const std::vector<float>& alertvalues);
+};
