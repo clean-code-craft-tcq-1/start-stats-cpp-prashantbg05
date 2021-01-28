@@ -45,7 +45,6 @@ class statsAlerter
     LEDAlert ledAlert;
    float maxThreshold;
     std::vector<IAlerter*> alerters = {&emailAlert, &ledAlert};
-    //statsAlerter(maxThreshold, alerters);
     statsAlerter(const float maxThreshold, std::vector<IAlerter*> alerters );
     void checkAndAlert(const std::vector<float>& alertvalues);
 };
