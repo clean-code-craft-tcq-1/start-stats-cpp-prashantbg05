@@ -6,7 +6,7 @@ using namespace std;
 using namespace Statistics;
 
     
-ComputeAVGMaxMin Statistics::ComputeStatistics(const std::vector<double>& report)
+ComputeAVGMaxMin Statistics::computedStats(const std::vector<double>& report)
 {
     //Implement statistics here
     
