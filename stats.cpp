@@ -9,6 +9,11 @@ Stats Statistics::ComputeStatistics(const std::vector<int>& )
 
 class Statistics
 {
+    
+    ComputeStatistics(float x, float y, float z, float w)
+    {
+    
+    }
 };
 
 
