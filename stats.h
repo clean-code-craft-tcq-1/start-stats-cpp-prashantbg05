@@ -7,7 +7,7 @@ namespace Statistics
 				public:
 				int size;
 				
-				float Mean;
+				float Average;
 				float MaxVal;
 				float MinVal;
 				float CalculateMean(const std::vector<float>& VecItem);
