@@ -4,7 +4,8 @@
 #include "stats.h"
 
 #include <cmath>
-
+/*
+using Namespace Statistics
 class Statistics
 {
     
@@ -38,4 +39,4 @@ TEST_CASE("raises alerts when max is greater than threshold") {
 
     REQUIRE(emailAlert.emailSent);
     REQUIRE(ledAlert.ledGlows);
-}
+}*/
