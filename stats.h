@@ -2,19 +2,17 @@
 namespace Statistics
 {
     
-		class CalMeanMaxMin 
-		{
-				public:
-				int size;
-				
-				float Mean;
-				float MaxVal;
-				float MinVal;
-				float CalculateMean(const std::vector<float>& VecItem);
-				float CalculateMax(const std::vector<float>& VecItem);
-				float CalculateMin(const std::vector<float>& VecItem);
-		};
-		
-		
-		CalMeanMaxMin ComputeStatistics(const std::vector<float>& VecItem);
+class ComputeAVGMaxMin 
+{
+    public:
+       int size;
+    //void ComputeStatistics(float report[]);
+    double Average;
+   double Maximum;
+   double Minimum;
+    double CalculateAvg(const std::vector<double>& report);
+    double CalculateMax(const std::vector<double>& report);
+    double CalculateMin(const std::vector<double>& report);
+};
+   ComputeAVGMaxMin ComputeStatistics(const std::vector<double>& report);
 }
