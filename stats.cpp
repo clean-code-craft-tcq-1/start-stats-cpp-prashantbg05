@@ -7,4 +7,8 @@ Stats Statistics::ComputeStatistics(const std::vector<int>& )
 }
 */
 
+class Statistics
+{
+};
+
 
