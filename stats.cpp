@@ -1,5 +1,9 @@
 #include "stats.h"
 #include <iostream>
+
+#include "catch.hpp"
+
+
 /*
 Stats Statistics::ComputeStatistics(const std::vector<int>& ) 
 {
@@ -7,13 +11,10 @@ Stats Statistics::ComputeStatistics(const std::vector<int>& )
 }
 */
 
-class Statistics
-{
-    
-    ComputeStatistics(float x, float y, float z, float w)
+
+
+
+  float Statistics::ComputeStatistics(float x, float y, float z, float w)
     {
     
     }
-};
-
-
