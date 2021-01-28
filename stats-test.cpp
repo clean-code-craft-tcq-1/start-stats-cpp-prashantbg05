@@ -19,7 +19,7 @@ struct computedStatsData
 
 //Statistics obj;
 //float myarray[4] = {1.5, 8.9, 3.2, 4.5};
-TEST_CASE("reports average, minimum and maximum") {
+TEST_CASE("reports Average, Minimum and Maximum") {
     auto computedStats = Statistics::ComputeStatistics({1.5, 8.9, 3.2, 4.5});
     float epsilon = 0.001;
     REQUIRE(std::abs(computedStats.Average - 4.525) < epsilon);
@@ -27,7 +27,7 @@ TEST_CASE("reports average, minimum and maximum") {
     REQUIRE(std::abs(computedStats.Minimum - 1.5) < epsilon);
 }
 
-TEST_CASE("average is NaN for empty array") {
+TEST_CASE("Average is NaN for empty array") {
     auto computedStats = Statistics::ComputeStatistics({});
     REQUIRE(std::isnan(computedStats.Average ) == true);
     REQUIRE(std::isnan(computedStats.Maximum )  == true);
