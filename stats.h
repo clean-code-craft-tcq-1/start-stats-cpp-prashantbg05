@@ -19,7 +19,7 @@ namespace Statistics
 		CalMeanMaxMin ComputeStatistics(const std::vector<float>& VecItem);
 }
 
-
+/*
 class IAlerter
 {
 };
@@ -49,3 +49,5 @@ class statsAlerter
     statsAlerter(const float maxThreshold, std::vector<IAlerter*> alerters );
     void checkAndAlert(const std::vector<float>& alertvalues);
 };
+
+*/
