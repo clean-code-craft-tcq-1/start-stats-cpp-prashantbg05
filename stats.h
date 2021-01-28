@@ -14,5 +14,5 @@ class ComputeAVGMaxMin
     double CalculateMax(const std::vector<double>& report);
     double CalculateMin(const std::vector<double>& report);
 };
-   ComputeAVGMaxMin ComputeStatistics(const std::vector<double>& report);
+   ComputeAVGMaxMin computedStats(const std::vector<double>& report);
 }
