@@ -7,7 +7,4 @@ Stats Statistics::ComputeStatistics(const std::vector<int>& )
 }
 */
 
-int main()
-{
-return 0;
-}
+
