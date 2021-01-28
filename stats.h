@@ -6,7 +6,8 @@
 class Statistics
 {
     public:
-float ComputeStatistics(float x, float y, float z, float w);    
+//float ComputeStatistics(float x, float y, float z, float w);    
+    float ComputeStatistics(double *values);
 };
 
 
