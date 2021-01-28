@@ -1,18 +1,20 @@
 #include <vector>
-#include <iostream>
-
-
-
-class Statistics
+namespace Statistics
 {
-    public:
-//float ComputeStatistics(float x, float y, float z, float w);    
-    float ComputeStatistics(double *values);
-};
-
-
-/*
-namespace Statistics {
-    Stats ComputeStatistics(const std::vector<int>& );
+    
+		class CalMeanMaxMin 
+		{
+				public:
+				int size;
+				
+				float Mean;
+				float MaxVal;
+				float MinVal;
+				float CalculateMean(const std::vector<float>& VecItem);
+				float CalculateMax(const std::vector<float>& VecItem);
+				float CalculateMin(const std::vector<float>& VecItem);
+		};
+		
+		
+		CalMeanMaxMin ComputeStatistics(const std::vector<float>& VecItem);
 }
-*/
