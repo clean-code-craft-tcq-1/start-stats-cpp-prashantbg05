@@ -14,11 +14,11 @@ Stats Statistics::ComputeStatistics(const std::vector<int>& )
 
 
 
-  float Statistics::ComputeStatistics(float x, float y, float z, float w)
+  float Statistics::ComputeStatistics(double *values)
     {
    float mean ;
       
-      mean =x+y+z+w;
+      mean =values[0]+values[1]+values[2]+values[3];
       
       return (mean/4);
     }
