@@ -3,6 +3,17 @@
 #include "catch.hpp"
 #include "stats.h"
 
+struct computedStatsstruct
+{
+    float average;
+    float max;
+    float min;
+    
+    string straverage;
+    string strmax;
+    string strmin;
+}computedStat;
+
 #include <cmath>
 float arr[4]={1.5, 8.9, 3.2, 4.5};
 TEST_CASE("reports average, minimum and maximum") {
