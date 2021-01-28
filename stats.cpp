@@ -16,5 +16,9 @@ Stats Statistics::ComputeStatistics(const std::vector<int>& )
 
   float Statistics::ComputeStatistics(float x, float y, float z, float w)
     {
-    
+   float mean ;
+      
+      mean =x+y+z+w;
+      
+      return (mean/4);
     }
