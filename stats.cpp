@@ -1,26 +1,20 @@
-#include "stats.h"
-#include <iostream>
-
-#include "catch.hpp"
-
-
-/*
-Stats Statistics::ComputeStatistics(const std::vector<int>& ) 
+#include <vector>
+namespace Statistics
 {
-    //Implement statistics here
+    		class CalMeanMaxMin 
+		{
+				public:
+				int size;
+				
+				float Mean;
+				float MaxVal;
+				float MinVal;
+				float CalculateMean(const std::vector<float>& VecItem);
+				float CalculateMax(const std::vector<float>& VecItem);
+				float CalculateMin(const std::vector<float>& VecItem);
+		};
+		
+		
+		CalMeanMaxMin ComputeStatistics(const std::vector<float>& VecItem);
+    
 }
-*/
-
-
-
-
-  float Statistics::ComputeStatistics(double *values)
-    {
-   float mean ;
-      
-      mean =values[0]+values[1]+values[2]+values[3];
-      computedStats.average=mean;
-     
-      return (mean/4);
-    }
-
