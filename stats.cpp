@@ -7,7 +7,7 @@ using namespace Statistics;
 
   
  
-CalMeanMaxMin Statistics::ComputeStatistics(const std::vector<float>& VecItem)
+computedStats CalMeanMaxMin Statistics::ComputeStatistics(const std::vector<float>& VecItem)
 {
     //Implement statistics here
     
