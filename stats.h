@@ -7,9 +7,12 @@ class CalMeanMaxMin
     public:
        int size;
 
-    float Average;
-   float Maximum;
-   float Minimum;
+ /*   float Average;
+  float Maximum;
+   float Minimum;*/
+    float average ;
+    float max;
+    float min;
     float CalculateMean(const std::vector<float>& report);
     float CalculateMax(const std::vector<float>& report);
     float CalculateMin(const std::vector<float>& report);
