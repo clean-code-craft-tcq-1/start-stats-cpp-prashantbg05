@@ -7,14 +7,14 @@ class CalMeanMaxMin
     public:
        int size;
 
-    double Average;
-   double Maximum;
-   double Minimum;
-    double CalculateMean(const std::vector<double>& report);
-    double CalculateMax(const std::vector<double>& report);
-    double CalculateMin(const std::vector<double>& report);
+    float Average;
+   float Maximum;
+   float Minimum;
+    float CalculateMean(const std::vector<float>& report);
+    float CalculateMax(const std::vector<float>& report);
+    float CalculateMin(const std::vector<float>& report);
 };
-   ComputeAVGMaxMin ComputeStatistics(const std::vector<double>& report);
+   ComputeAVGMaxMin ComputeStatistics(const std::vector<float>& report);
 }
 
 
