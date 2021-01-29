@@ -14,7 +14,7 @@ class CalMeanMaxMin
     float CalculateMax(const std::vector<float>& report);
     float CalculateMin(const std::vector<float>& report);
 };
-   ComputeAVGMaxMin ComputeStatistics(const std::vector<float>& report);
+   CalMeanMaxMin ComputeStatistics(const std::vector<float>& report);
 }
 
 
