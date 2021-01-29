@@ -11,23 +11,23 @@ CalMeanMaxMin Statistics::ComputeStatistics(const std::vector<float>& VecItem)
 {
     //Implement statistics here
     
-    CalMeanMaxMin VecData;
-    VecData.clear();
-  
-   
-        VecData.Mean   = VecData.CalculateMean(VecItem);
-        VecData.MaxVal = VecData.CalculateMax(VecItem);
-        VecData.MinVal = VecData.CalculateMin(VecItem);
-  
-  
-    if (VecData.Mean==0)
-    {
-        VecData.Mean = NAN;
-        VecData.MaxVal = NAN;
-        VecData.MinVal = NAN;
-    }
-  
-    return VecData;
+		CalMeanMaxMin VecData;
+		VecData.clear();
+
+
+		VecData.Mean   = VecData.CalculateMean(VecItem);
+		VecData.MaxVal = VecData.CalculateMax(VecItem);
+		VecData.MinVal = VecData.CalculateMin(VecItem);
+
+
+		if (VecData.Mean==0)
+		{
+		VecData.Mean = NAN;
+		VecData.MaxVal = NAN;
+		VecData.MinVal = NAN;
+		}
+
+		return VecData;
 } 
 
 float CalMeanMaxMin::CalculateMean(const std::vector<float>& VecItem)
@@ -50,23 +50,22 @@ float CalMeanMaxMin::CalculateMax(const std::vector<float>& VecItem)
 
 	
 	
-	 if (VecItem[0] > VecItem[1]) 
-    {
-        Max = VecItem[0];
-        Min = VecItem[1];
-    } 
-    else
-    {
-        Max = VecItem[1];
-        Min = VecItem[0];
-    } 
-     
-    for(i = 2; i < VecItem.size(); i++)
-    {
-        if (VecItem[i] > Max)     
-            Max = VecItem[i];
-             
-   }
+			if (VecItem[0] > VecItem[1]) 
+			{
+			Max = VecItem[0];
+			Min = VecItem[1];
+			} 
+			else
+			{
+			Max = VecItem[1];
+			Min = VecItem[0];
+			} 
+
+			for(i = 2; i < VecItem.size(); i++)
+			{
+			if (VecItem[i] > Max)     
+			Max = VecItem[i];
+			}
 	
 	
    
@@ -75,17 +74,7 @@ float CalMeanMaxMin::CalculateMax(const std::vector<float>& VecItem)
 
 float CalMeanMaxMin::CalculateMin(const std::vector<float>& VecItem)
 {
-/*      float  Min = VecItem[0];
-    for(int i=1;i<VecItem.size();i++)
-    {
-       if(Min > VecItem[i])
-       {
-          Min =  VecItem[i];
-       }
-    }
-    */
-	
-		 if (VecItem[0] > VecItem[1]) 
+    if (VecItem[0] > VecItem[1]) 
     {
         Max = VecItem[0];
         Min = VecItem[1];
@@ -98,10 +87,8 @@ float CalMeanMaxMin::CalculateMin(const std::vector<float>& VecItem)
      
     for(i = 2; i < VecItem.size(); i++)
     {
-        /* if (VecItem[i] > Max)     
-            Max = VecItem[i]; */
-             
-        else if (VecItem[i] < Min)     
+         
+         if (VecItem[i] < Min)     
             Min = VecItem[i]; 
     }
 	
@@ -109,7 +96,7 @@ float CalMeanMaxMin::CalculateMin(const std::vector<float>& VecItem)
     return Min;
 }
 
-void statsAlerter::checkAndAlert(const std::vector<float>& alertvalues)
+void statsAlerter::verifyData(const std::vector<float>& verifyvalue)
 {
     CalMeanMaxMin VecData;
    statsAlerter checkstatsAlerter;
